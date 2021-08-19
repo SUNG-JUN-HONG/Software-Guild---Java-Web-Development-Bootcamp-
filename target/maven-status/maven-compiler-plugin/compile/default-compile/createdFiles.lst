@@ -1,0 +1,16 @@
+com\sg\m3vendingmachine\ui\VendingMachineView.class
+com\sg\foundations\basics\m3vendingmachine\App.class
+com\sg\m3vendingmachine\service\NoItemInventoryException.class
+com\sg\m3vendingmachine\service\InsufficientFundsException.class
+com\sg\m3vendingmachine\ui\UserIO.class
+com\sg\m3vendingmachine\dao\VendingMachinePersistenceException.class
+com\sg\m3vendingmachine\app\controller\VendingMachineController.class
+com\sg\m3vendingmachine\dao\VendingMachineDao.class
+com\sg\m3vendingmachine\dao\VendingMachineAuditDao.class
+com\sg\m3vendingmachine\dao\VendingMachineAuditDaoFileImpl.class
+com\sg\m3vendingmachine\dao\VendingMachineDaoFileImpl.class
+com\sg\m3vendingmachine\service\VendingMachineServiceLayerImpl.class
+com\sg\m3vendingmachine\service\VendingMachineServiceLayer.class
+com\sg\m3vendingmachine\ui\UserIOConsoleImpl.class
+com\sg\m3vendingmachine\dto\Change.class
+com\sg\m3vendingmachine\dto\Item.class

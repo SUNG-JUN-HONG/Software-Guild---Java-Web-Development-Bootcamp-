@@ -1,0 +1,2 @@
+2021-08-19T15:10:38.908542100 : The item : Pepsi Purchased
+2021-08-19T15:11:32.439325500 : The item : Fanta Purchased
