@@ -7,6 +7,7 @@ package com.sg.m3vendingmachine.service;
 
 import com.sg.m3vendingmachine.dao.VendingMachinePersistenceException;
 import com.sg.m3vendingmachine.dto.Item;
+import com.sg.m3vendingmachine.dto.CurrentBalance;
 import java.math.BigDecimal;
 import java.util.List;
 
@@ -19,10 +20,10 @@ public interface VendingMachineServiceLayer {
     List<Item> getAllItems() throws 
             VendingMachinePersistenceException;
      
-      Item getItem(String itemNumber) throws
+    Item getItem(String itemNumber) throws
             VendingMachinePersistenceException;
       
-       String purchaseItem(String itemNumber, BigDecimal deposit) throws
+    CurrentBalance purchaseItem(String itemNumber, BigDecimal deposit) throws
             VendingMachinePersistenceException,
             InsufficientFundsException, 
             NoItemInventoryException;

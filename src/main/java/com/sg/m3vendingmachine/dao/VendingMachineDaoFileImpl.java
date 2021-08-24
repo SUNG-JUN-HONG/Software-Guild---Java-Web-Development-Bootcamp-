@@ -18,6 +18,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Scanner;
+import java.util.stream.Collectors;
 
 /**
  *
@@ -41,14 +42,15 @@ public class VendingMachineDaoFileImpl implements VendingMachineDao {
     @Override
     public List<Item> getAllItems()
             throws VendingMachinePersistenceException {
-        loadReciept();
-        return new ArrayList<>(items.values());
+        loadReciept(); // TXT -> Map<String, item> items = new HashMap<>();
+        return items.values().stream().filter(s-> s.getItemQuantity() > 0).collect(Collectors.toList());
+        //return new ArrayList<>(items.values());
     }
 
     @Override
     public Item getItem(String itemNumber)
             throws VendingMachinePersistenceException {
-        loadReciept();
+        loadReciept(); 
         return items.get(itemNumber);
     }
 
@@ -59,7 +61,7 @@ public class VendingMachineDaoFileImpl implements VendingMachineDao {
        Item item = getItem(itemNumber);
        item.purchaseItem();
         
-        writeReciept();
+       writeReciept();
       
     }
     
@@ -89,7 +91,11 @@ public class VendingMachineDaoFileImpl implements VendingMachineDao {
             currentItem.setItemName(currentTokens[1]);
             currentItem.setItemPrice(new BigDecimal(currentTokens[2]));
             currentItem.setItemQuantity(Integer.parseInt(currentTokens[3]));
-          
+            
+            //if (currentItem.getItemQuantity() != 0){
+            //    items.put(currentItem.getItemNumber(), currentItem);
+   
+            //}
             items.put(currentItem.getItemNumber(), currentItem);
         }
   

@@ -16,9 +16,10 @@ public class Change {
     Item item;
 
     private int dollars, quarters, dimes, nickels, pennies;
-
     
-    public void makeChange(Item item, BigDecimal deposit) {
+    
+    
+    public double makeChange(Item item, BigDecimal deposit) {
 
         BigDecimal one = new BigDecimal("1");
         BigDecimal five = new BigDecimal("5");
@@ -32,7 +33,9 @@ public class Change {
         BigDecimal myChange = deposit.subtract(price);
 
         myChange = myChange.multiply(oneHundread);
-
+        
+        double myChangeInDouble = (myChange.floatValue())/100;
+        
         dollars = 0;
         quarters = 0;
         dimes = 0;
@@ -62,7 +65,8 @@ public class Change {
              
             }
         }
-      
+        
+        return myChangeInDouble;
 
     }
 

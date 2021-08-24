@@ -10,6 +10,7 @@ import com.sg.m3vendingmachine.dao.VendingMachineDao;
 import com.sg.m3vendingmachine.dao.VendingMachinePersistenceException;
 import com.sg.m3vendingmachine.dto.Change;
 import com.sg.m3vendingmachine.dto.Item;
+import com.sg.m3vendingmachine.dto.CurrentBalance;
 import java.math.BigDecimal;
 import java.util.List;
 
@@ -45,7 +46,7 @@ public class VendingMachineServiceLayerImpl implements
     }
     
     @Override
-    public String purchaseItem(String itemNumber, BigDecimal deposit) throws
+    public CurrentBalance purchaseItem(String itemNumber, BigDecimal deposit) throws
            VendingMachinePersistenceException, 
            InsufficientFundsException, 
            NoItemInventoryException {
@@ -67,7 +68,7 @@ public class VendingMachineServiceLayerImpl implements
          }
         
         //pass in price and deposit into change class and calculate change
-        change.makeChange(item, deposit);
+        double myChangeInDouble = change.makeChange(item, deposit);
         
         //Update the item information by subtracting 1 from item object(inventory)
         dao.purchaseItem(itemNumber);
@@ -80,8 +81,10 @@ public class VendingMachineServiceLayerImpl implements
                             +"\n " + change.getNickels()+ " Nickels "
                             +"\n " + change.getPennies()+ " Pennies";
 
+        CurrentBalance cb = new CurrentBalance(stringChange, myChangeInDouble);
         
-        return stringChange;
+        //return stringChange;
+        return cb;
         
     }
 

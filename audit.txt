@@ -1,2 +1,18 @@
 2021-08-19T15:10:38.908542100 : The item : Pepsi Purchased
 2021-08-19T15:11:32.439325500 : The item : Fanta Purchased
+2021-08-20T10:17:38.027212300 : The item : Canada Dry Purchased
+2021-08-20T10:23:40.980885300 : The item : Canada Dry Purchased
+2021-08-23T11:42:45.261122100 : The item : Canada Dry Purchased
+2021-08-23T11:46:49.402624700 : The item : Canada Dry Purchased
+2021-08-23T17:20:01.509731500 : The item : Fanta Purchased
+2021-08-23T17:23:27.760253700 : The item : Fanta Purchased
+2021-08-23T17:26:40.850492200 : The item : Fanta Purchased
+2021-08-23T17:26:55.975423 : The item : Canada Dry Purchased
+2021-08-23T17:31:14.970342800 : The item : Fanta Purchased
+2021-08-23T17:31:29.149848500 : The item : Canada Dry Purchased
+2021-08-23T17:35:09.838978700 : The item : Fanta Purchased
+2021-08-23T17:35:15.454616800 : The item : Canada Dry Purchased
+2021-08-23T18:27:26.611090600 : The item : Fanta Purchased
+2021-08-23T18:27:37.239099500 : The item : Canada Dry Purchased
+2021-08-24T06:59:10.761564800 : The item : Fanta Purchased
+2021-08-24T06:59:27.659448100 : The item : Canada Dry Purchased

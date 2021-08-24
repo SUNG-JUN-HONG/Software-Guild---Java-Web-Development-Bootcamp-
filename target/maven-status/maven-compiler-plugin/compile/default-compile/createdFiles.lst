@@ -14,3 +14,4 @@ com\sg\m3vendingmachine\service\VendingMachineServiceLayer.class
 com\sg\m3vendingmachine\ui\UserIOConsoleImpl.class
 com\sg\m3vendingmachine\dto\Change.class
 com\sg\m3vendingmachine\dto\Item.class
+com\sg\m3vendingmachine\dto\CurrentBalance.class

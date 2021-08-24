@@ -24,6 +24,7 @@ public class VendingMachineView {
     }
 
     public int printMenuAndGetSelection() {
+        io.print("\n");
         io.print("M3 Vending Machine");
         io.print("1. Purchase the drink");
         io.print("2. List the drink informaton");
@@ -101,6 +102,10 @@ public class VendingMachineView {
    
     public void displayChange(String change) {
         io.print("Your current change : " + change);
+    }
+    
+    public void displyChangeInDouble(double balance){
+        io.print("The remaining deposit is :$"+balance);
     }
 
 }	

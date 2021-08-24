@@ -10,6 +10,7 @@ import com.sg.m3vendingmachine.dao.VendingMachineAuditDaoFileImpl;
 import com.sg.m3vendingmachine.dao.VendingMachineDao;
 import com.sg.m3vendingmachine.dao.VendingMachineDaoFileImpl;
 import com.sg.m3vendingmachine.dto.Change;
+import com.sg.m3vendingmachine.dto.CurrentBalance;
 import com.sg.m3vendingmachine.dto.Item;
 import java.io.BufferedWriter;
 import java.io.File;
@@ -84,7 +85,7 @@ public class VendingMachineServiceLayerImplTest {
 
     @Test
     public void testPurchaseItem() throws Exception {
-      String purchaseItem = service.purchaseItem("1", new BigDecimal("2.00"));
+      CurrentBalance purchaseItem = service.purchaseItem("1", new BigDecimal("2.00"));
        assertEquals( "Your recieving 0 Dollars \nYour recieving 2 Quarters \nYour recieving 0 Dimes \nYour recieving 0 Nickels \nYour recieving 0 Pennies", purchaseItem);
     }
     

@@ -7,6 +7,7 @@ package com.sg.m3vendingmachine.app.controller;
 
 import com.sg.m3vendingmachine.dao.VendingMachinePersistenceException;
 import com.sg.m3vendingmachine.dto.Item;
+import com.sg.m3vendingmachine.dto.CurrentBalance;
 import com.sg.m3vendingmachine.service.InsufficientFundsException;
 import com.sg.m3vendingmachine.service.NoItemInventoryException;
 import com.sg.m3vendingmachine.service.VendingMachineServiceLayer;
@@ -22,7 +23,8 @@ public class VendingMachineController {
 
     VendingMachineView view;
     VendingMachineServiceLayer service;
-
+    
+    BigDecimal currentDeposit = new BigDecimal("0");
     
     public VendingMachineController(VendingMachineServiceLayer service, VendingMachineView view) {
         this.view = view;
@@ -30,7 +32,8 @@ public class VendingMachineController {
     }
 
     public void run() {
-
+        
+        
         boolean keepGoing = true;
         int menuSelection = 0;
 
@@ -92,20 +95,28 @@ public class VendingMachineController {
 
     private void purchaseItem()
             throws VendingMachinePersistenceException {
-       
-        BigDecimal deposit = requestDeposit();
-
+                
+        if (currentDeposit.floatValue() == 0){
+            System.out.println("Your current Deposit is :$0.00");
+            currentDeposit = requestDeposit();
+        }
+        
         boolean hasErrors = false;
      
             String itemNumber = view.getItemNumberChoice();
             try {
-                String purchasedItem = service.purchaseItem(itemNumber, deposit);
-                view.displayChange(purchasedItem);
+                CurrentBalance purchasedItem = service.purchaseItem(itemNumber, currentDeposit);
+                //String purchasedItem = service.purchaseItem(itemNumber, currentDeposit);
+                view.displayChange(purchasedItem.getRemainingDepositMessage());
+                view.displyChangeInDouble(purchasedItem.getCurrentBalance());
                 view.displayThankYouPurchase();
+                currentDeposit = BigDecimal.valueOf(purchasedItem.getCurrentBalance());
                 hasErrors = false;
             } catch (InsufficientFundsException | NoItemInventoryException e) {
                 hasErrors = true;
                 view.displayErrorMessage(e.getMessage());
+                view.displyChangeInDouble(currentDeposit.doubleValue());
+
             }
     
             
