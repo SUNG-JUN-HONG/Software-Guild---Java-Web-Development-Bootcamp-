@@ -48,9 +48,17 @@ public class VendingMachineDaoFileImpl implements VendingMachineDao {
     }
 
     @Override
-    public Item getItem(String itemNumber)
+    public List<Item> getItem()
             throws VendingMachinePersistenceException {
         loadReciept(); 
+        //return items.get(itemNumber);
+        return new ArrayList<>(items.values());
+    }
+    
+    @Override
+    public Item getItemPurchased(String itemNumber) 
+            throws VendingMachinePersistenceException {
+        loadReciept();
         return items.get(itemNumber);
     }
 
@@ -58,12 +66,14 @@ public class VendingMachineDaoFileImpl implements VendingMachineDao {
     public void purchaseItem(String itemNumber) 
         throws VendingMachinePersistenceException {
         
-       Item item = getItem(itemNumber);
+       Item item = getItemPurchased(itemNumber);
        item.purchaseItem();
         
        writeReciept();
       
     }
+    
+    
     
     private void loadReciept() throws VendingMachinePersistenceException {
         Scanner scanner;
@@ -92,10 +102,6 @@ public class VendingMachineDaoFileImpl implements VendingMachineDao {
             currentItem.setItemPrice(new BigDecimal(currentTokens[2]));
             currentItem.setItemQuantity(Integer.parseInt(currentTokens[3]));
             
-            //if (currentItem.getItemQuantity() != 0){
-            //    items.put(currentItem.getItemNumber(), currentItem);
-   
-            //}
             items.put(currentItem.getItemNumber(), currentItem);
         }
   
@@ -114,7 +120,7 @@ public class VendingMachineDaoFileImpl implements VendingMachineDao {
 	    }
 	    
 	 
-	    List<Item> itemList = this.getAllItems();
+	    List<Item> itemList = this.getItem();
 	    for (Item currentItem : itemList) {
 	     
 	        out.println(currentItem.getItemNumber() + DELIMITER

@@ -42,7 +42,7 @@ public class VendingMachineServiceLayerImpl implements
      @Override
     public Item getItem(String itemNumber) throws
             VendingMachinePersistenceException {
-        return dao.getItem(itemNumber);
+        return dao.getItemPurchased(itemNumber);
     }
     
     @Override
@@ -52,7 +52,7 @@ public class VendingMachineServiceLayerImpl implements
            NoItemInventoryException {
        
         //gets requested item
-        Item item = dao.getItem(itemNumber);
+        Item item = dao.getItemPurchased(itemNumber);
         
         //checks if inventory is less than 0
         if(item.getItemQuantity() <= 0) {

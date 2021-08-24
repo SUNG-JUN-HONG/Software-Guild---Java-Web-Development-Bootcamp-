@@ -17,10 +17,15 @@ public interface VendingMachineDao {
     List<Item> getAllItems()
             throws VendingMachinePersistenceException;
 
-    Item getItem(String itemNumber)
+    List<Item> getItem()
              throws VendingMachinePersistenceException;
 
+    Item getItemPurchased(String itemNumber) 
+            throws VendingMachinePersistenceException;
+    
     void purchaseItem(String itemNumber)
              throws VendingMachinePersistenceException;
+    
+    
 
 }

@@ -50,7 +50,7 @@ public class VendingMachineController {
                         break;
                     case 2:
                         listItems();
-                        viewItem();
+                        //viewItem();
                         break;
                     case 3:
                         keepGoing = false;
