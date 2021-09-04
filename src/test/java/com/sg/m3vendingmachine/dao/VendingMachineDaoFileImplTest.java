@@ -74,14 +74,14 @@ public class VendingMachineDaoFileImplTest {
     @Test
     public void testGetItem() throws Exception {
         
-        assertEquals(item, dao.getItem("1"));
+        assertEquals(item, dao.getItemPurchased("1"));
     }
 
 
     @Test
     public void testPurchaseItem() throws Exception {
         dao.purchaseItem("1");
-        assertEquals(9, dao.getItem("1").getItemQuantity());
+        assertEquals(9, dao.getItemPurchased("1").getItemQuantity());
     }
  
     

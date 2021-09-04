@@ -16,6 +16,8 @@ import com.sg.m3vendingmachine.service.VendingMachineServiceLayerImpl;
 import com.sg.m3vendingmachine.ui.UserIO;
 import com.sg.m3vendingmachine.ui.UserIOConsoleImpl;
 import com.sg.m3vendingmachine.ui.VendingMachineView;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 /**
  *
@@ -24,6 +26,8 @@ import com.sg.m3vendingmachine.ui.VendingMachineView;
 public class App {
 
     public static void main(String[] args) {
+        
+        /*
         UserIO myIo = new UserIOConsoleImpl();
         VendingMachineView myView = new VendingMachineView(myIo);
         VendingMachineDao myDao = new VendingMachineDaoFileImpl();
@@ -32,7 +36,12 @@ public class App {
         VendingMachineServiceLayer myService = new VendingMachineServiceLayerImpl(myDao, myAuditDao, myChange);
         VendingMachineController controller = new VendingMachineController(myService, myView);
         controller.run();
-  
+        */
+        
+        ApplicationContext ctx = new ClassPathXmlApplicationContext("applicationContext.xml");
+        VendingMachineController controller = ctx.getBean("controller", VendingMachineController.class);
+        controller.run();        
+      
       
     }
 }

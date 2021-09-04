@@ -1,4 +1,4 @@
-com\sg\m3vendingmachine\dao\VendingMachineDaoStubImpl.class
 com\sg\m3vendingmachine\dao\VendingMachineDaoFileImplTest.class
-com\sg\m3vendingmachine\dao\VendingMachineAuditDaoStubImpl.class
+com\sg\m3vendingmachine\service\VendingMachineDaoStubImpl.class
+com\sg\m3vendingmachine\service\VendingMachineAuditDaoStubImpl.class
 com\sg\m3vendingmachine\service\VendingMachineServiceLayerImplTest.class

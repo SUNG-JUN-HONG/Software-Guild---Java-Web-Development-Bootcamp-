@@ -55,7 +55,13 @@ public class VendingMachineDaoStubImpl implements  VendingMachineDao{
     }
 
     @Override
-    public Item getItem(String itemNumber)
+    public List<Item> getItem()
+            throws VendingMachinePersistenceException {
+        return new ArrayList<>(items.values());
+    }
+    
+    @Override
+    public Item getItemPurchased(String itemNumber) 
             throws VendingMachinePersistenceException {
         return items.get(itemNumber);
     }
@@ -64,7 +70,7 @@ public class VendingMachineDaoStubImpl implements  VendingMachineDao{
     public void purchaseItem(String itemNumber) 
         throws VendingMachinePersistenceException {
         
-       Item item = getItem(itemNumber);
+       Item item = getItemPurchased(itemNumber);
        item.purchaseItem();
         
       

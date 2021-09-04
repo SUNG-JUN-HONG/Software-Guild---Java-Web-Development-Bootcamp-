@@ -23,3 +23,12 @@
 2021-08-24T12:12:19.479484500 : The item : Pepsi Purchased
 2021-08-24T12:16:07.268621700 : The item : Coke Purchased
 2021-08-24T12:16:38.682768100 : The item : Pepsi Purchased
+2021-08-31T10:23:42.672975500 : The item : Coke Purchased
+2021-08-31T10:26:06.770899500 : The item : Coke Purchased
+2021-08-31T10:28:07.227374800 : The item : Coke Purchased
+2021-08-31T10:28:07.251310900 : The item : CherryCoke Purchased
+2021-08-31T10:29:09.670529800 : The item : Coke Purchased
+2021-08-31T10:29:09.689479600 : The item : CherryCoke Purchased
+2021-08-31T10:30:43.448798100 : The item : Coke Purchased
+2021-08-31T10:30:43.460766200 : The item : CherryCoke Purchased
+2021-08-31T12:08:21.615795400 : The item : Coke Purchased
