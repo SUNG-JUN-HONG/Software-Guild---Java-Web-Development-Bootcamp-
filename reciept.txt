@@ -1,5 +1,5 @@
 1::Coke::1.50::0
-2::Sprite::0.75::8
+2::Sprite::0.75::7
 3::Fanta::1.75::3
 4::Pepsi::1.50::8
-5::Canada Dry::1.25::4
+5::Canada Dry::1.25::3

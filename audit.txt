@@ -32,3 +32,6 @@
 2021-08-31T10:30:43.448798100 : The item : Coke Purchased
 2021-08-31T10:30:43.460766200 : The item : CherryCoke Purchased
 2021-08-31T12:08:21.615795400 : The item : Coke Purchased
+2021-09-07T10:25:28.544344200 : The item : Sprite Purchased
+2021-09-07T10:34:21.043958400 : The item : Coke Purchased
+2021-09-07T10:34:48.232483900 : The item : Canada Dry Purchased
